@@ -29,14 +29,14 @@ public class Funcionario {
     * Método que calcular o imposto de renda do funcionário
     * com base no salário e na lista de classificação de 
     * imposto de renda abaixo:
-    * <ul>
-    *   <ul> Faixa Faixa de Salário Alíquota</ul>
-    *   <ul> 1ª Faixa Até R$ 1.903,98 Isento</ul>
-    *   <ul> 2ª Faixa De R$ 1.903,99 à R$ 2.826,65 <b>7,5%</b></ul>
-    *   <ul> 3ª Faixa De R$ 2.826,66 à R$ 3.751,05 15,0%</ul>
-    *   <ul> 4ª Faixa De R$ 3.751,06 à R$ 4.664,68 22,5%</ul>
-    *   <ul> 5ª Faixa A partir de R$ 4.664,69 27,5%</ul>
-    * </ul>
+    *    Faixa Faixa de Salário Alíquota
+    * 
+    *    1ª Faixa Até R$ 1.903,98 Isento \n
+    *    2ª Faixa De R$ 1.903,99 à R$ 2.826,65 7,5% \n
+    *    3ª Faixa De R$ 2.826,66 à R$ 3.751,05 15,0% \n
+    *    4ª Faixa De R$ 3.751,06 à R$ 4.664,68 22,5% \n
+    *    5ª Faixa A partir de R$ 4.664,69 27,5% \n
+    * 
     * @return Valor do imposto de renda a pagar pelo funcionário 
     */
     public double calcularIrpf() {
