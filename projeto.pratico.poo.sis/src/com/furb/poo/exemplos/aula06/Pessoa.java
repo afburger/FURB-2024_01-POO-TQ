@@ -44,7 +44,7 @@ public class Pessoa {
     }
 
     public void setAltura(double altura) {
-        if (altura > 3) {
+        if (altura < 0) {
             throw new IllegalArgumentException("Altura da pessoa inválida");
         }
         this.altura = altura;
