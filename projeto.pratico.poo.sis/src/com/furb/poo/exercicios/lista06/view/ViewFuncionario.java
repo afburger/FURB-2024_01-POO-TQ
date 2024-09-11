@@ -106,7 +106,7 @@ public class ViewFuncionario extends javax.swing.JFrame {
         DecimalFormat df = new DecimalFormat("#,00");
         
         cbFaixa.setSelectedItem(funcionario.identificarFaixaIrpf());
-        lbImposto.setText("O imposto a pagar é R$" + df.format(funcionario.calularIrpf()));
+        lbImposto.setText("O imposto a pagar é R$" + df.format(funcionario.calcularIrpf()));
     }//GEN-LAST:event_btAvaliarActionPerformed
 
     /**

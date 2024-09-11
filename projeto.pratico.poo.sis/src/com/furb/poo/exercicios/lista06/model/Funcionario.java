@@ -47,7 +47,7 @@ public class Funcionario {
     * 
     * @return Valor do imposto de renda a pagar pelo funcionário 
     */
-//    public double calularIrpf() {
+//    public double calcularIrpf() {
 //        double imposto = 0;
 //        double diferenca = 0;
 //        
@@ -96,7 +96,7 @@ public class Funcionario {
 //        return imposto;
 //    }
     
-    public double calularIrpf() {
+    public double calcularIrpf() {
         double imposto = 0;
         double diferenca = 0;
         
