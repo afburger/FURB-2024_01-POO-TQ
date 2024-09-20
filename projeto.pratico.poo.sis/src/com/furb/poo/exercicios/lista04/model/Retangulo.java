@@ -28,7 +28,7 @@ public class Retangulo {
     /**
      * Responsável por atribuir uma altura para o retângulo.
      * @param altura a altura informada.
-     * @throws caso a altura seja negativa, irá lançar um {@link IllegalArgumentException}
+     * @throws IllegalArgumentException caso a altura seja negativa
      */
     public void setAltura(int altura) {
         if (altura <= 0) {
