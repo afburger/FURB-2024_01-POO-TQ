@@ -10,6 +10,7 @@ package com.furb.poo.exemplos.aula13.model;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class ManipuladorCSV {
 
@@ -40,22 +41,22 @@ public class ManipuladorCSV {
 	// Lê todas as pessoas do arquivo CSV
 	public List<PessoaCSV> lerPessoas() throws IOException {
 		
-		List<PessoaCSV> pessoas = new ArrayList<>();
-		
-		try (BufferedReader br = new BufferedReader(new FileReader(FILE_PATH))) {
-			String linha;
+            List<PessoaCSV> pessoas = new ArrayList<>();
+
+            Scanner sc = new Scanner(new File(FILE_PATH));
+
+            String linha;
+
+            while (sc.hasNext()) {
+                linha = sc.nextLine();
+                String[] dados = linha.split(",");
+                int id = Integer.parseInt(dados[0]);
+                String nome = dados[1];
+                int idade = Integer.parseInt(dados[2]);
+                pessoas.add(new PessoaCSV(id, nome, idade));
+            }
 			
-			while ((linha = br.readLine()) != null) {
-				String[] dados = linha.split(",");
-				int id = Integer.parseInt(dados[0]);
-				String nome = dados[1];
-				int idade = Integer.parseInt(dados[2]);
-				pessoas.add(new PessoaCSV(id, nome, idade));
-			}
-			
-		}
-		
-		return pessoas;
+            return pessoas;
 	}
 
 	// Atualiza uma pessoa pelo ID no CSV
@@ -66,15 +67,15 @@ public class ManipuladorCSV {
 		try (PrintWriter pw = new PrintWriter(new FileWriter(FILE_PATH))) {
 		
 			for (PessoaCSV pessoa : pessoas) {
-			
-				if (pessoa.getId() == id) {
-					pessoa.setNome(novoNome);
-					pessoa.setIdade(novaIdade);
-				}
-				
-				pw.println(pessoa.toString());
-				
-			}
+
+                            if (pessoa.getId() == id) {
+                                pessoa.setNome(novoNome);
+                                pessoa.setIdade(novaIdade);
+                            }
+
+                        pw.println(pessoa.toString());
+
+                    }
 		}
 	}
 
@@ -94,18 +95,18 @@ public class ManipuladorCSV {
 		try {
 			ManipuladorCSV manipulador = new ManipuladorCSV();
 
-//			// Adiciona algumas pessoas ao CSV
-//			manipulador.adicionarPessoa(new Pessoa(1, "João", 30));
-//			manipulador.adicionarPessoa(new Pessoa(2, "Maria", 25));
-//
-//			// Atualiza a pessoa com ID 1
-			manipulador.atualizarPessoa(2, "Mariazinha", 37);
-//
-//			// Lista todas as pessoas
-//			System.out.println("Lista de Pessoas:");
-//			manipulador.listarPessoas();
+			// Adiciona algumas pessoas ao CSV
+			manipulador.adicionarPessoa(new PessoaCSV(1, "João", 30));
+			manipulador.adicionarPessoa(new PessoaCSV(2, "André", 25));
+
+			// Atualiza a pessoa com ID 1
+			manipulador.atualizarPessoa(2, "André Felipe", 37);
+
+			// Lista todas as pessoas
+			System.out.println("Lista de Pessoas:");
+			manipulador.listarPessoas();
 			
-//			manipulador.adicionarPessoa(new Pessoa(6, "André", 35));
+			manipulador.adicionarPessoa(new PessoaCSV(6, "Pedro", 35));
 
 		} catch (IOException e) {
 			e.printStackTrace();
