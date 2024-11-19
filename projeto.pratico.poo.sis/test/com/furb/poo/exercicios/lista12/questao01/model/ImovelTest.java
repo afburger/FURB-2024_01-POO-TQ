@@ -210,7 +210,7 @@ public class ImovelTest {
         imovel.setFinalidade(Finalidade.RESIDENCIAL);
         imovel.setBairro(bairro);
         
-        assertEquals(1250.00, imovel.calcularIptu(), 0.01); 
+        assertEquals(1250000.0, imovel.calcularIptu(), 0.01); 
     }
     
 }
